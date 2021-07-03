@@ -1,6 +1,129 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       https://maven.apache.org/xsd/settings-1.0.0.xsd">
-  <localRepository>/usr/share/maven/ref/repository</localRepository>
+    <localRepository>/usr/share/maven/ref/repository</localRepository>
+    <servers>
+        <server>
+            <id>releases</id>
+            <username>admin</username>
+            <password>`q1w2e3r4</password>
+        </server>
+
+        <server>
+            <id>snapshots</id>
+            <username>admin</username>
+            <password>`q1w2e3r4</password>
+        </server>
+    </servers>
+
+    <mirrors>
+        <mirror>
+            <mirrorOf>aliyun-google</mirrorOf>
+            <id>aliyun-google</id>
+            <name>aliyun-google</name>
+            <url>https://maven.aliyun.com/repository/google</url>
+        </mirror>
+
+        <mirror>
+            <mirrorOf>aliyun-spring</mirrorOf>
+            <id>aliyun-spring</id>
+            <name>aliyun-spring</name>
+            <url>https://maven.aliyun.com/repository/spring</url>
+        </mirror>
+
+        <mirror>
+            <mirrorOf>aliyun-spring-plugin</mirrorOf>
+            <id>aliyun-spring-plugin</id>
+            <name>aliyun-spring-plugin</name>
+            <url>https://maven.aliyun.com/repository/spring-plugin</url>
+        </mirror>
+
+        <mirror>
+            <mirrorOf>aliyun-public</mirrorOf>
+            <id>aliyun-public</id>
+            <name>aliyun-public</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </mirror>
+
+        <mirror>
+            <mirrorOf>group-maven</mirrorOf>
+            <id>group-maven</id>
+            <name>group-maven</name>
+            <url>http://119.3.102.151:8081/repository/group-maven/</url>
+        </mirror>
+
+        <mirror>
+            <id>default</id>
+            <name>minivisionmaven</name>
+            <url>http://119.3.102.151:8081/repository/group-maven/</url>
+            <mirrorOf>*</mirrorOf>
+        </mirror>
+    </mirrors>
+
+    <!-- 读取mvn库用,选择要激活的profile -->
+    <activeProfiles>
+        <activeProfile>group-maven</activeProfile>
+        <activeProfile>aliyun-public</activeProfile>
+        <activeProfile>aliyun-google</activeProfile>
+        <activeProfile>aliyun-spring</activeProfile>
+        <activeProfile>aliyun-spring-plugin</activeProfile>
+    </activeProfiles>
+
+    <profiles>
+        <profile>
+            <id>group-maven</id>
+            <repositories>
+                <repository>
+                    <id>group-maven</id>
+                    <name>group-maven</name>
+                    <url>http://119.3.102.151:8081/repository/group-maven/</url>
+                </repository>
+            </repositories>
+        </profile>
+
+        <profile>
+            <id>aliyun-public</id>
+            <repositories>
+                <repository>
+                    <id>aliyun-public</id>
+                    <name>aliyun-public</name>
+                    <url>https://maven.aliyun.com/repository/public</url>
+                </repository>
+            </repositories>
+        </profile>
+
+        <profile>
+            <id>aliyun-google</id>
+            <repositories>
+                <repository>
+                    <id>aliyun-google</id>
+                    <name>aliyun-google</name>
+                    <url>https://maven.aliyun.com/repository/google</url>
+                </repository>
+            </repositories>
+        </profile>
+
+        <profile>
+            <id>aliyun-spring</id>
+            <repositories>
+                <repository>
+                    <id>aliyun-spring</id>
+                    <name>aliyun-spring</name>
+                    <url>https://maven.aliyun.com/repository/spring</url>
+                </repository>
+            </repositories>
+        </profile>
+
+        <profile>
+            <id>aliyun-spring-plugin</id>
+            <repositories>
+                <repository>
+                    <id>aliyun-spring-plugin</id>
+                    <name>aliyun-spring-plugin</name>
+                    <url>https://maven.aliyun.com/repository/spring-plugin</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
 </settings>
